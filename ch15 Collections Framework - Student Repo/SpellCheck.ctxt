@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=filename
+comment1.target=java.util.Set\ readWords(java.lang.String)
+comment1.text=\r\n\ \ \ \ \ \ Reads\ all\ words\ from\ a\ file.\r\n\ \ \ \ \ \ @param\ filename\ the\ name\ of\ the\ file\r\n\ \ \ \ \ \ @return\ a\ set\ with\ all\ lowercased\ words\ in\ the\ file.\ Here,\ a\ \r\n\ \ \ \ \ \ word\ is\ a\ sequence\ of\ upper-\ and\ lowercase\ letters.\r\n
+numComments=2
