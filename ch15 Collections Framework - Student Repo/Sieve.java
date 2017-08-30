@@ -19,15 +19,15 @@ public class Sieve
             
         }
       for (int x = 2; x<= sqn; x++)
-      {
-   
-      for (int i = x + 1; i <= n; i++)
         {
+   
+          for (int i = x + 1; i <= n; i++)
+           {
             if (i%x == 0)
                 numbers.remove(i);
             
+           }
         }
-    }
       for (Integer i: numbers)
             System.out.println(i);
         
