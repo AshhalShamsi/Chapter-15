@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=priority\ description
+comment0.target=ToDo(java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ \ \ \ \ \ Constructs\ a\ work\ order\ with\ a\ given\ priority\ and\ description.\r\n\ \ \ \ \ \ @param\ aPriority\ the\ priority\ of\ this\ work\ order\r\n\ \ \ \ \ \ @param\ aDescription\ the\ description\ of\ this\ work\ order\r\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment2.params=Obj
+comment2.target=int\ compareTo(java.lang.Object)
+comment2.text=\r\n\ \ \ \ Compares\ objects\ by\ priority\r\n\ \ \ \ @param\ Object\ other\ work\ order\r\n\ \ \ \ @return\ -1,0,1\ comparing\ priority\ var\r\n
+numComments=3
