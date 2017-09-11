@@ -37,11 +37,11 @@ public class ToDo implements Comparable
   public int compareTo(Object Obj)
   {
      ToDo other = (ToDo)Obj; 
-     boolean ours = true;
-     if(!(this.priority.charAt(0) == 4 && this.priority.charAt(0) == 13 && this.priority.charAt(0) == 23))
+     boolean ours = (this.priority.charAt(0) == 'D' || this.priority.charAt(0) == 'M' || this.priority.charAt(0) == 'W');
+     boolean theyrs = (other.priority.charAt(0) == 'D' || other.priority.charAt(0) == 'W' || other.priority.charAt(0) == 'M');
+     if(!ours)
      {
-         ours = false;
-        if(!(other.priority.charAt(0) == 4 && other.priority.charAt(0) == 23 && other.priority.charAt(0) == 13))
+        if(!theyrs)
         { 
             if (Integer.parseInt(this.priority) < Integer.parseInt(other.priority))
                 return -1;
@@ -51,23 +51,68 @@ public class ToDo implements Comparable
                 return 0;
         }
      }
-     else if(ours = true)
+     else if(ours && !theyrs)
      {
-        if(this.priority.charAt(0) == 13)
+        if(this.priority.charAt(0) == 'M')
             return -1;
-        else if (this.priority.charAt(0) == 4)
+        else if (this.priority.charAt(0) == 'D')
             {
-                if(Integer.parseInt(other.priority) == 1)
+                if(Integer.parseInt(other.priority) > 1)
                     return -1;
-                else if(Integer.parseInt(other.priority) == 2)
+                else if(Integer.parseInt(other.priority) < 2)
                     return 1;
             }
-        else if(this.priority.charAt(0) == 23)
+        else if(this.priority.charAt(0) == 'W')
             {
-                if(Integer.parseInt(other.priority) == 2)
+                if(Integer.parseInt(other.priority) > 2)
                     return -1;
-                else if(Integer.parseInt(other.priority) == 4)
+                else 
                     return 1;
+
+            }
+     }
+     
+     else if(!ours && theyrs)
+     {
+        if(other.priority.charAt(0) == 'M')
+            return 1;
+        else if (other.priority.charAt(0) == 'D')
+            {
+                if(Integer.parseInt(this.priority) > 1)
+                    return -1;
+                else if(Integer.parseInt(this.priority) < 2)
+                    return 1;
+            }
+        else if(other.priority.charAt(0) == 'W')
+            {
+                if(Integer.parseInt(this.priority) > 2)
+                    return 1;
+                else if(Integer.parseInt(this.priority) < 3)
+                    return -1;
+
+            }
+     }
+     else
+     {
+        if(this.priority.charAt(0) == 'M')
+            return -1;
+        else if (this.priority.charAt(0) == 'D')
+            {
+                if(other.priority.charAt(0) == 'D')
+                    return 0;
+                else if(other.priority.charAt(0) == 'W')
+                    return -1;
+                else 
+                    return 1;
+            }
+        else if(this.priority.charAt(0) == 'W')
+            {
+                if(other.priority.charAt(0) == 'D')
+                    return 1;
+                else if(other.priority.charAt(0) == 'W')
+                    return 0;
+                else 
+                    return -1;
 
             }
      }

@@ -18,10 +18,10 @@ public class PriorityQueueDemo
       {
       System.out.println("Please Enter A command");
       input = keyboard.nextLine();
-      if(input.substring(0,2).equalsIgnoreCase("add"))
+      if(input.substring(0,3).equalsIgnoreCase("add"))
              work.add(new ToDo(input.substring(4,5), input.substring(6)));
       
-      else if(input.substring(0,3).equalsIgnoreCase("next"))
+      else if(input.substring(0,4).equalsIgnoreCase("next"))
             System.out.println(work.remove());
       else if(input.equalsIgnoreCase("quit"))
             sentry = false;
