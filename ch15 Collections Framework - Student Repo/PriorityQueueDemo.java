@@ -14,6 +14,11 @@ public class PriorityQueueDemo
       PriorityQueue<ToDo> work = new PriorityQueue<>(); 
       boolean sentry = true;
       //add several WorkOrder
+   work.add(new ToDo("1", "Justas"));
+   work.add(new ToDo("D", "Jim"));
+   work.add(new ToDo("2", "Juasdf"));
+   work.add(new ToDo("3", "asdfa"));
+   work.add(new ToDo("W", "jkasdf"));
    while (sentry)
       {
       System.out.println("Please Enter A command");

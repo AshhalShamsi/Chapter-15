@@ -54,7 +54,7 @@ public class ToDo implements Comparable
      else if(ours && !theyrs)
      {
         if(this.priority.charAt(0) == 'M')
-            return -1;
+            return 1;
         else if (this.priority.charAt(0) == 'D')
             {
                 if(Integer.parseInt(other.priority) > 1)
@@ -66,7 +66,7 @@ public class ToDo implements Comparable
             {
                 if(Integer.parseInt(other.priority) > 2)
                     return -1;
-                else 
+                else if(Integer.parseInt(other.priority) < 3)
                     return 1;
 
             }
@@ -75,7 +75,7 @@ public class ToDo implements Comparable
      else if(!ours && theyrs)
      {
         if(other.priority.charAt(0) == 'M')
-            return 1;
+            return -1;
         else if (other.priority.charAt(0) == 'D')
             {
                 if(Integer.parseInt(this.priority) > 1)
@@ -87,7 +87,7 @@ public class ToDo implements Comparable
             {
                 if(Integer.parseInt(this.priority) > 2)
                     return 1;
-                else if(Integer.parseInt(this.priority) < 3)
+                else if(Integer.parseInt(this.priority) < 2)
                     return -1;
 
             }
