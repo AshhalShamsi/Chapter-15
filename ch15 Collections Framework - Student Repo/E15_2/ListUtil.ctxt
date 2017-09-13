@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=strings
+comment0.target=void\ reverse(java.util.LinkedList)
+comment0.text=\r\n\ \ \ \ \ \ Reverses\ the\ elements\ in\ a\ linked\ list\r\n\ \ \ \ \ \ @param\ strings\ the\ linked\ list\ to\ reverse\r\n
+numComments=1

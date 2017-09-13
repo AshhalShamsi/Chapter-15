@@ -6,19 +6,18 @@ import java.io.*;
    are comma-separated strings of words of the same length.
    Then print out those strings, in increasing order by
    the length of their entries.
-   Modify Worked Example 15.1.
+   Use the Java 8 merge() method from Java 8 Note 15.1.
 */
 public class StringLengthMap
 {
-   public static void main(String[] args) throws FileNotFoundException
+   public static void main(String[] args)
    {
       String filename = "test1.txt";
 
       try (Scanner in = new Scanner(new File(filename)))
       {
 
-         // Create your map here
-         . . .
+         Map<Integer, String> words =new TreeMap<>();
 
          while (in.hasNext())
          {
@@ -26,14 +25,23 @@ public class StringLengthMap
             Integer len = word.length();
 
             // Update the map here
-            // Modify Worked Example 15.1
-            . . .
+            // Use the Java 8 merge() method
+            String list = words.get(len);
+            if (list == null)
+                list = word;
+            else    
+                list =list + "," +word;
+            words.put(len,list);
 
 
          }
 
          // Print the strings, in increasing order of their length
          // Use this format: 1: i, a, i
+         for (Integer len: words.keySet())
+         {
+           System.out.println(len + " : " + words.get(len));    
+         }
       }
       catch (FileNotFoundException e)
       {
