@@ -16,9 +16,18 @@ public class ListUtil
        LinkedList<String> reverse = new LinkedList<>();
        
        ListIterator<String> iterator = strings.listIterator();
-       while (iterator.hasNext()){
-           iterator.next();
-       strings.addFirst(strings.remove());
+    while (iterator.hasNext()){
+           reverse.addFirst(iterator.next());
     }
+    iterator = strings.listIterator();
+     while (iterator.hasNext()){
+           iterator.next();
+           iterator.remove();
+    }
+    ListIterator<String> iterator1 = reverse.listIterator();
+    while (iterator1.hasNext()){
+           strings.addLast(iterator1.next());
+    }
+    
    }
 }

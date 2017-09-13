@@ -1,6 +1,7 @@
 //Ashhal Shamsi
 //9/7/2017
 //This creates a ToDo priority
+//BAD TASTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /**
    This class encapsulates a work order with a priority.

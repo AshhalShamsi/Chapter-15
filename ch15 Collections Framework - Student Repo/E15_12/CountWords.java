@@ -1,4 +1,6 @@
-import java.io.File;
+package E15_12;
+
+import java.io.*;
 import java.util.Scanner;
 import java.util.TreeSet;
 /**
@@ -12,13 +14,12 @@ public class CountWords
 {
    public static void main(String[] args)
    {
-      String fileName = "test1.txt";
+      String filename = "E15_12/test1.txt";
 
-      try (Scanner in = new Scanner(new File(fileName)))
+      try (Scanner in = new Scanner(new File(filename)))
       {
 
-         // Create your TreeSet here
-         . . .
+         TreeSet<String> words = new TreeSet<>();
 
          int numWords = 0;
          while (in.hasNext())
@@ -26,15 +27,17 @@ public class CountWords
             String word = clean(in.next());
             numWords++;
             // Add the word to the set here
-            . . .
+            words.add(word);
 
          }
 
          // Print the words
-         . . .
+         for (String i : words)
+            System.out.println(i);
          System.out.println("Number of words: " + numWords);
          // Print the size of the resulting set
-         . . .
+         System.out.println("Unique :" + words.size());
+        
 
       }
       catch (FileNotFoundException e)
