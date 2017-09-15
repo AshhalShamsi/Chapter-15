@@ -1,3 +1,4 @@
+import java.util.*;
 public class Grid
 {
    private static final int SIZE = 10;
@@ -9,7 +10,18 @@ public class Grid
    */
    public void floodfill(int row, int column)
    {
-      . . .
+       int i = 1;
+       Stack<Integer[]> row = new Stack<>();
+       while (pixels[row][column] == 0)
+       {
+            pixels[row][column] = i;
+            row.push(pixels[row][column])
+            
+            i++;
+            row
+            
+            
+        }
    }
 
    @Override
