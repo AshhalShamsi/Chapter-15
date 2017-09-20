@@ -3,22 +3,31 @@ public class Grid
 {
    private static final int SIZE = 10;
    int[][] pixels = new int[SIZE][SIZE];
-   . . .
 
    /**
       Flood fill, starting with the given row and column.
    */
    public void floodfill(int row, int column)
    {
-       int i = 1;
-       Stack<Integer[]> row = new Stack<>();
-       while (pixels[row][column] == 0)
-       {
-            pixels[row][column] = i;
-            row.push(pixels[row][column])
-            
+       int i = 0;
+       Stack<Integer[]> rows = new Stack<>();
+       rows.push(new Integer[] {row,column});
+      while (i < SIZE * SIZE)
+        {
             i++;
-            row
+            Integer [] rekt =rows.pop();
+            int x = rekt[0];
+            int y = rekt[1];
+            pixels[x][y] = i;
+            if(x<SIZE-1 && pixels[x+1][y] == 0)
+               rows.push(new Integer[] {x+1,y});
+            if(y<SIZE-1 && pixels[x][y+1] == 0)
+               rows.push(new Integer[] {x,y+1});
+            if(x>0 && pixels[x-1][y] == 0)
+               rows.push(new Integer[] {x-1,y});   
+            if(y>0 && pixels[x][y-1] == 0)
+               rows.push(new Integer[] {x,y-1});
+            
             
             
         }
